@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "urbannest-f01c0",
   storageBucket: "urbannest-f01c0.appspot.com",
   messagingSenderId: "770874433087",
-  appId: "1:770874433087:web:6268eed480bb4e1612628a"
+  appId: "1:770874433087:web:cac608d8ae82993e12628a"
 };
 
 // Initialize Firebase
