@@ -25,8 +25,6 @@ export default function CreateListing() {
     regularPrice: 50,
     discountPrice: 0,
     offer: false,
-    parking: false,
-    furnished: false,
   });
   const [imageUploadError, setImageUploadError] = useState(false);
   const [uploading, setUploading] = useState(false);
