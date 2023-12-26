@@ -9,15 +9,7 @@ const listingSchema = new mongoose.Schema({
         type : String , 
         required : true 
     }, 
-    year : {
-        type : Number , 
-        required : true 
-    }, 
-    price : {
-        type : Number , 
-        required : true
-    }, 
-    discountedPrice :  {
+    size : {
         type : Number , 
         required : true 
     },
@@ -25,22 +17,22 @@ const listingSchema = new mongoose.Schema({
         type : String , 
         required : true 
     }, 
+    regularPrice : {
+        type : Number , 
+        required : true
+    }, 
+    discountPrice :  {
+        type : Number , 
+        required : true 
+    },
     offer : {
-        type : Boolean , 
-        required : true 
-    }, 
-    sell : {
-        type : Boolean , 
-        required : true 
-    }, 
-    rent : {
         type : Boolean , 
         required : true 
     }, 
     used : {
         type : Boolean , 
         required : true 
-    },
+    }, 
     imageUrls : {
         type : Array , 
         required : true 

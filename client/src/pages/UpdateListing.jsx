@@ -19,7 +19,7 @@ export default function CreateListing() {
     name: '',
     description: '',
     address: '',
-    type: 'rent',
+    size : 9 ,
     bedrooms: 1,
     bathrooms: 1,
     regularPrice: 50,
@@ -198,21 +198,21 @@ export default function CreateListing() {
           />
           <input
             type='text'
-            placeholder='Address'
+            placeholder='Gender'
             className='border p-3 rounded-lg'
-            id='address'
+            id='gender'
             required
             onChange={handleChange}
-            value={formData.address}
+            value={formData.gender}
           />
           <div className='flex gap-6 flex-wrap'>
             <div className='flex gap-2'>
               <input
                 type='checkbox'
-                id='sale'
+                id='sell'
                 className='w-5'
                 onChange={handleChange}
-                checked={formData.type === 'sale'}
+                checked={formData.type === 'sell'}
               />
               <span>Sell</span>
             </div>
@@ -226,26 +226,7 @@ export default function CreateListing() {
               />
               <span>Rent</span>
             </div>
-            <div className='flex gap-2'>
-              <input
-                type='checkbox'
-                id='parking'
-                className='w-5'
-                onChange={handleChange}
-                checked={formData.parking}
-              />
-              <span>Parking spot</span>
-            </div>
-            <div className='flex gap-2'>
-              <input
-                type='checkbox'
-                id='furnished'
-                className='w-5'
-                onChange={handleChange}
-                checked={formData.furnished}
-              />
-              <span>Furnished</span>
-            </div>
+
             <div className='flex gap-2'>
               <input
                 type='checkbox'
@@ -261,28 +242,15 @@ export default function CreateListing() {
             <div className='flex items-center gap-2'>
               <input
                 type='number'
-                id='bedrooms'
+                id='size'
                 min='1'
-                max='10'
+                max='13'
                 required
                 className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
-                value={formData.bedrooms}
+                value={formData.size}
               />
-              <p>Beds</p>
-            </div>
-            <div className='flex items-center gap-2'>
-              <input
-                type='number'
-                id='bathrooms'
-                min='1'
-                max='10'
-                required
-                className='p-3 border border-gray-300 rounded-lg'
-                onChange={handleChange}
-                value={formData.bathrooms}
-              />
-              <p>Baths</p>
+              <p>Size</p>
             </div>
             <div className='flex items-center gap-2'>
               <input
@@ -297,7 +265,7 @@ export default function CreateListing() {
               />
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
-                <span className='text-xs'>($ / month)</span>
+                <span className='text-xs'>(Rs)</span>
               </div>
             </div>
             {formData.offer && (
@@ -314,7 +282,7 @@ export default function CreateListing() {
                 />
                 <div className='flex flex-col items-center'>
                   <p>Discounted price</p>
-                  <span className='text-xs'>($ / month)</span>
+                  <span className='text-xs'>(Rs)</span>
                 </div>
               </div>
             )}
