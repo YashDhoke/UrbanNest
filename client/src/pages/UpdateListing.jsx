@@ -109,7 +109,7 @@ export default function CreateListing() {
   };
 
   const handleChange = (e) => {
-    if (e.target.id === 'sale' || e.target.id === 'rent') {
+    if (e.target.id === 'sell' || e.target.id === 'rent') {
       setFormData({
         ...formData,
         type: e.target.id,
@@ -117,8 +117,7 @@ export default function CreateListing() {
     }
 
     if (
-      e.target.id === 'parking' ||
-      e.target.id === 'furnished' ||
+      e.target.id === 'used' ||
       e.target.id === 'offer'
     ) {
       setFormData({
