@@ -19,6 +19,7 @@ export default function CreateListing() {
     name: '',
     description: '',
     address: '',
+    type : 'rent' ,
     size : 9 ,
     bedrooms: 1,
     bathrooms: 1,
@@ -262,7 +263,11 @@ export default function CreateListing() {
               />
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
-                <span className='text-xs'>(Rs)</span>
+
+                {formData.type === 'rent' && (
+                  <span className='text-xs'>($ / month)</span>
+                )}
+
               </div>
             </div>
             {formData.offer && (
@@ -279,7 +284,11 @@ export default function CreateListing() {
                 />
                 <div className='flex flex-col items-center'>
                   <p>Discounted price</p>
-                  <span className='text-xs'>(Rs)</span>
+
+                  {formData.type === 'rent' && (
+                    <span className='text-xs'>($ / month)</span>
+                  )}
+                  
                 </div>
               </div>
             )}

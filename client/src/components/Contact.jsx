@@ -9,7 +9,7 @@ export default function Contact({ listing }) {
   };
 
   useEffect(() => {
-    const fetchowner = async () => {
+    const fetchOwner = async () => {
       try {
         const res = await fetch(`/api/user/${listing.userRef}`);
         const data = await res.json();
@@ -18,7 +18,7 @@ export default function Contact({ listing }) {
         console.log(error);
       }
     };
-    fetchowner();
+    fetchOwner();
   }, [listing.userRef]);
   return (
     <>
