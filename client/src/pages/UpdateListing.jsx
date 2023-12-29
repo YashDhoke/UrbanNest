@@ -19,7 +19,7 @@ export default function CreateListing() {
     name: '',
     description: '',
     address: '',
-    type : 'rent' ,
+    type : 'sell' ,
     size : 9 ,
     bedrooms: 1,
     bathrooms: 1,

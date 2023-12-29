@@ -6,8 +6,10 @@ import {useSelector} from 'react-redux' ;
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/bundle';
 import {
-  FaBed,  
+  FaShoePrints,  
   FaMarsStroke ,
+  FaCheckCircle, 
+  FaTimesCircle,
   FaParking,
   FaShare,
 } from 'react-icons/fa';
@@ -46,6 +48,14 @@ export default function Listing() {
     };
     fetchListing();
   }, [params.listingId]);
+
+  function ItemUsageIcon({ used }) {
+    return used ? <FaCheckCircle color="red" /> : <FaTimesCircle color="green" />;
+  }
+
+  function ItemOfferIcon({ used }) {
+    return used ? <FaCheckCircle color="red" /> : <FaTimesCircle color="green" />;
+  }
 
   return (
     <main>
@@ -113,17 +123,17 @@ export default function Listing() {
             </p>
             <ul className='text-green-900 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6'>
               <li className='flex items-center gap-1 whitespace-nowrap '>
-                <FaBed className='text-lg' />
+                <FaShoePrints className='text-lg' />
                 {
                    `${listing.size} size `
                 }
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap '>
-                <FaParking className='text-lg' />
+                <ItemUsageIcon className='text-lg' />
                 {listing.used ? 'Previously used' : 'Not used previously'}
               </li>
               <li className='flex items-center gap-1 whitespace-nowrap '>
-                <FaParking className='text-lg' />
+                <ItemOfferIcon className='text-lg' />
                 {listing.offer ? 'Offer applicable :)' : 'Currently no offer on this item :('}
               </li>
             </ul>
